@@ -1,0 +1,11 @@
+{{template "layout" .}}
+
+{{define "title"}}Page non trouvée{{end}}
+
+{{define "content"}}
+<section class="card error-card">
+    <h2>404 - Page non trouvée</h2>
+    <p>La page que vous recherchez n'existe pas.</p>
+    <a href="/" class="btn">Retour à l'accueil</a>
+</section>
+{{end}}
