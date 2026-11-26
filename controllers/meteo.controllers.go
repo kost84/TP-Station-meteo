@@ -57,7 +57,6 @@ func ListVilles(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// 5. Afficher la liste des communes trouvées (homonymes)
 	helpers.Render(w, http.StatusOK, "ville", ListPage{
 		Search:   search,
 		Communes: communes,
