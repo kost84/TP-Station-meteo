@@ -14,7 +14,7 @@ var httpClient = &http.Client{
 
 }
 
-func RechercheComunne(nom string) ([]models.Commune, error){
+func RechercheComunne(nom string) ([]models.Commune, error) {
 
 	endpoint := fmt.Sprintf("https://geo.api.gouv.fr/communes?nom=%s&fields=nom,code,codesPostaux,codeDepartement,centre,population")
 
@@ -34,11 +34,12 @@ func RechercheComunne(nom string) ([]models.Commune, error){
 	}
 	return communes, nil
 }	
+
 	
-func RecupererCommuneParCode(codeINSEE string) (*models.Commune, error) {
+func RecupererCommuneParCode(code string) (*models.Commune, error) {
 	endpoint := fmt.Sprintf(
 		"https://geo.api.gouv.fr/communes/%s?fields=nom,code,codesPostaux,codeDepartement,centre,population",
-		url.PathEscape(codeINSEE),
+		url.PathEscape(code),
 	)
 	resp, err := httpClient.Get(endpoint)
 	if err != nil {
